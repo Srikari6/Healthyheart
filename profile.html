@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='SWE.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Healthy Heart Helper</h1>
+        <p>Your health companion for a stronger heart</p>
+    </header>
+    <div class="profile-container">
+        <h1>Welcome, {{ current_user.username }}!</h1>
+        
+        <div class="profile-options">
+            <button onclick="window.location.href='{{ url_for('bmi') }}'">Check BMI</button>
+            <button onclick="window.location.href='{{ url_for('health_input') }}'">Take Advanced Test</button>
+            <button onclick="window.location.href='{{ url_for('reports') }}'">See Previous Reports</button>
+        </div>
+
+        <!-- Logout Button -->
+        <div class="logout-button">
+            <button onclick="window.location.href='{{ url_for('logout') }}'">Logout</button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='SWE.css') }}">
+    <title>Healthy Heart Helper</title>
+</head>
+<body>
+    <header>
+        <h1>Healthy Heart Helper</h1>
+        <p>Your health companion for a stronger heart</p>
+    </header>
+    <h1>Your BMI is: {{ "%.2f" | format(bmi) }}</h1>
+    <p>{{ bmi_message }}</p>
+    
+    <!-- Updated Button to Go Back to Profile -->
+    <button class="button-style" onclick="window.location.href='{{ url_for('profile') }}'">Go Back to Profile</button>
+    <button class="button-style" onclick="window.location.href='{{ url_for('health_input') }}'">Proceed to Health Input</button>
+
+</body>
+</html>
+

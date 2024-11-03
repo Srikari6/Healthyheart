@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='SWE_2.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Health Risk Prediction</h1>
+        <p>Enter your health details to check your risk level</p>
+    </header>
+    <h1>Your Previous Reports</h1>
+    
+    {% if reports %}
+        <ul>
+            {% for report in reports %}
+                <li>
+                    <strong>Date:</strong> {{ report.created_at.strftime('%Y-%m-%d %H:%M:%S') }}<br>
+                    <strong>Input Data:</strong> {{ report.input_data }}<br>
+                    <strong>Prediction Result:</strong> {{ report.prediction_result }}<br>
+                    <strong>Prediction Score:</strong> {{ report.prediction_score }}
+                </li>
+                <hr>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No reports found.</p>
+    {% endif %}
+
+    <button class="button-style" onclick="window.location.href='{{ url_for('profile') }}'">Back to Profile</button>
+</body>
+</html>

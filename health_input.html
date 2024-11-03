@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='SWE_2.css') }}">
+    <title>Health Risk Prediction</title>
+</head>
+<body>
+    <header>
+        <h1>Health Risk Prediction</h1>
+        <p>Enter your health details to check your risk level</p>
+    </header>
+
+    <form method="POST" action="/health_input">
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required><br><br>
+
+        <label for="education">Education:</label>
+        <input type="number" id="education" name="education" required><br><br>
+
+        <label for="sex">Sex (0 for Female, 1 for Male):</label>
+        <input type="number" id="sex" name="sex" required><br><br>
+
+        <label for="is_smoking">Smoking Status:</label>
+        <input type="checkbox" id="is_smoking" name="is_smoking" value="1"><br><br>
+
+        <label for="cigsPerDay">Cigarettes per Day:</label>
+        <input type="number" id="cigsPerDay" name="cigsPerDay"><br><br>
+
+        <label for="BPMeds">Blood Pressure Meds:</label>
+        <input type="checkbox" id="BPMeds" name="BPMeds" value="1"><br><br>
+
+        <label for="prevalentStroke">Stroke History:</label>
+        <input type="checkbox" id="prevalentStroke" name="prevalentStroke" value="1"><br><br>
+
+        <label for="prevalentHyp">Hypertension:</label>
+        <input type="checkbox" id="prevalentHyp" name="prevalentHyp" value="1"><br><br>
+
+        <label for="diabetes">Diabetes:</label>
+        <input type="checkbox" id="diabetes" name="diabetes" value="1"><br><br>
+
+        <label for="totChol">Total Cholesterol:</label>
+        <input type="number" id="totChol" name="totChol" required><br><br>
+
+        <label for="sysBP">Systolic Blood Pressure:</label>
+        <input type="number" id="sysBP" name="sysBP" required><br><br>
+
+        <label for="diaBP">Diastolic Blood Pressure:</label>
+        <input type="number" id="diaBP" name="diaBP" required><br><br>
+
+        <label for="BMI">BMI:</label>
+        <input type="number" id="BMI" name="BMI" required step="0.01"><br><br>
+
+        <label for="heartRate">Heart Rate:</label>
+        <input type="number" id="heartRate" name="heartRate" required><br><br>
+
+        <label for="glucose">Glucose:</label>
+        <input type="number" id="glucose" name="glucose" required><br><br>
+
+        <input type="submit" value="Predict Health Risk">
+    </form>
+</body>
+</html>

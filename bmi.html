@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Example of linking the CSS file in HTML templates -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='SWE.css') }}">
+    <title>Healthy Heart Helper</title>
+</head>
+<body>
+    <header>
+        <h1>Healthy Heart Helper</h1>
+        <p>Your health companion for a stronger heart</p>
+    </header>
+    <h1>BMI Calculator</h1>
+    <form method="POST" action="/bmi">
+        <label for="weight">Weight (kg):</label>
+        <input type="number" id="weight" name="weight" required><br><br>
+        <label for="height">Height (cm):</label>
+        <input type="number" id="height" name="height" required step="0.01"><br><br>
+        <input class="button-style" type="submit" value="Calculate BMI">
+    </form>    
+</body>
+</html>

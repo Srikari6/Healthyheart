@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='SWE.css') }}">
+</head>
+<body>
+    <header>
+      <h1>Health Risk Prediction</h1>
+      <p>Enter your health details to check your risk level</p>
+    </header>
+    <h2>Login</h2>
+    <form action="{{ url_for('login') }}" method="POST">
+      <div>
+        <label for="email">Email:</label>
+        <input type="email" name="email" required>
+      </div>
+      <div>
+        <label for="password">Password:</label>
+        <input type="password" name="password" required>
+      </div>
+        <button class="button-style" type="submit">Login</button>
+    </form>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <ul>
+          {% for category, message in messages %}
+            <li class="alert alert-{{ category }}">{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+    <p>Don't have an account? <a href="{{ url_for('register') }}">Register here</a></p>
+</body>
+</html>
